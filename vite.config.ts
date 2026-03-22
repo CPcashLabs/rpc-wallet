@@ -2,13 +2,26 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+const normalizeBasePath = (basePath?: string): string | undefined => {
+  if (basePath === undefined) {
+    return undefined;
+  }
+
+  if (basePath === '' || basePath === '/') {
+    return '/';
+  }
+
+  return basePath.endsWith('/') ? basePath : `${basePath}/`;
+};
+
 export default defineConfig(({ command }) => {
   const isSingleFileBuild = command === 'build' && process.env.SINGLEFILE === '1';
+  const buildBasePath = normalizeBasePath(process.env.BASE_PATH) ?? './';
 
   return {
     // Use relative asset paths in production builds so the site can be served from
-    // subpaths like IPFS gateways (/ipfs/<cid>/) without a centralized backend.
-    base: command === 'build' ? './' : '/',
+    // subpaths like IPFS gateways (/ipfs/<cid>/) and GitHub Pages project sites.
+    base: command === 'build' ? buildBasePath : '/',
     plugins: [react()],
     build: {
       // Single-file output is intentionally bundled into one JS asset,
