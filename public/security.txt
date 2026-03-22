@@ -1,5 +1,5 @@
-Contact: https://github.com/CPcashLabs/WalletRPC/security/policy
+Contact: https://github.com/CPcashLabs/rpc-wallet/security/policy
 Expires: 2027-02-16T00:00:00Z
 Preferred-Languages: en, zh
-Policy: https://github.com/CPcashLabs/WalletRPC/security/policy
+Policy: https://github.com/CPcashLabs/rpc-wallet/security/policy
 Canonical: /security.txt

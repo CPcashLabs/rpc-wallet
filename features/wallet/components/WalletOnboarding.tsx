@@ -114,7 +114,7 @@ export const WalletOnboarding: React.FC<WalletOnboardingProps> = ({ input, setIn
           </div>
           <div className="flex items-center justify-center space-x-3">
             <a
-              href="https://github.com/CPcashLabs/WalletRPC"
+              href="https://github.com/CPcashLabs/rpc-wallet"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 text-[10px] text-slate-400 font-bold uppercase hover:text-[#0062ff] transition-colors"
